@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 function App() {
   const navigate = useNavigate();
   return (
-    <div className="bg-violet-600 h-screen p-10 flex flex-col gap-8">
+    <div className="bg-violet-600 h-screen p-10 flex flex-col gap-10">
+      <div className="h-full w-full bg-violet-800 rounded-full absolute left-0 -bottom-2/3 z-0 overflow-y-hidden"></div>
+
       <section className="tracking-widest flex justify-between text-white font-bold">
         <button
           className=" w-4/12 bg-violet-700 rounded-3xl cursor-pointer hover:scale-105
