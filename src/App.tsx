@@ -1,5 +1,6 @@
 import PlayerInfo from "./components/PlayerInfo";
 import { useNavigate } from "react-router-dom";
+import "./index.css";
 
 function App() {
   const navigate = useNavigate();
@@ -25,8 +26,8 @@ function App() {
           RESTART
         </button>
       </section>
-      <div className="flex flex-col gap-8 sm:gap-6 sm:grid ">
-        <section className="flex gap-5 justify-center px-10">
+      <div className="flex flex-col gap-8 sm:gap-6 ">
+        <section className="flex gap-5 justify-center px-10 ">
           <PlayerInfo player={"PLAYER 1"} />
           <PlayerInfo player={"PLAYER 2"} />
         </section>
@@ -34,7 +35,7 @@ function App() {
           <img
             src="src/assets/images/board-layer-white-small.svg"
             alt="empty connect four board"
-            className="border-b-8 border-t-2 border-black outline-black	 rounded-[36px] ml-auto mr-auto w-9/12 z-20 relative"
+            className="border-b-8 border-3 border-black outline-black rounded-b-[30px] ml-auto mr-auto w-9/12 z-20 relative"
           />
           <div className="relative z-20 w-full">
             <img
