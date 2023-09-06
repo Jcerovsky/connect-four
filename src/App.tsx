@@ -38,10 +38,10 @@ function App() {
         <div className="relative">
           <img
             src="src/assets/images/turn-background-red.svg"
-            alt="house shaped icon with a timer"
-            className="absolute -bottom-36 left-14"
+            alt="house-shaped icon with a timer"
+            className="absolute left-1/2 transform -translate-x-1/2 -bottom-36"
           />
-          <div className="absolute text-white font-bold right-20 top-5 text-center ">
+          <div className="absolute left-1/2 transform -translate-x-1/2 absolute text-white font-bold top-5 text-center whitespace-nowrap">
             <p>PLAYER 1'S TURN</p>
             <p className="text-6xl">1</p>
           </div>
