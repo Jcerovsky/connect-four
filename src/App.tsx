@@ -1,9 +1,16 @@
 import PlayerInfo from "./components/PlayerInfo";
 import { useNavigate } from "react-router-dom";
 import "./index.css";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [isViewedOnDesktop, setIsViewedOnDesktop] = useState<boolean>(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setIsViewedOnDesktop(window.innerWidth > 800);
+  }, [window.innerWidth]);
+
   return (
     <div className="bg-violet-600 h-screen flex flex-col gap-8 sm:gap-6 relative">
       <section className="tracking-widest flex justify-between text-white font-bold px-10 pt-10 items-center">
@@ -26,16 +33,17 @@ function App() {
           RESTART
         </button>
       </section>
-      <div className="flex flex-col gap-8 sm:gap-6 ">
-        <section className="flex gap-5 justify-center px-10 ">
+      <div className="flex flex-col gap-8 sm:gap-6 md:flex-row">
+        <section className="flex gap-5 justify-center px-10">
           <PlayerInfo player={"PLAYER 1"} />
-          <PlayerInfo player={"PLAYER 2"} />
+          {!isViewedOnDesktop && <PlayerInfo player={"PLAYER 2"} />}
         </section>
         <section className=" relative w-full">
           <img
             src="src/assets/images/board-layer-white-small.svg"
             alt="empty connect four board"
-            className="border-b-8 border-3 border-black outline-black rounded-b-[30px] ml-auto mr-auto w-9/12 z-20 relative"
+            className="border-b-8 border-3 border-black outline-black rounded-b-[30px] ml-auto
+            mr-auto w-9/12 z-20 relative md:rounded-b-[40px]"
           />
           <div className="relative z-20 w-full">
             <img
@@ -50,6 +58,11 @@ function App() {
           </div>
           <div className=" h-96 w-full bg-violet-800 rounded-t-[70px] absolute left-0 -bottom-[350px] z-10"></div>
         </section>
+        {isViewedOnDesktop && (
+          <section className="order-last">
+            <PlayerInfo player={"PLAYER 2"} />
+          </section>
+        )}
       </div>
     </div>
   );

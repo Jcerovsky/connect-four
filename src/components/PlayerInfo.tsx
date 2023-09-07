@@ -9,7 +9,7 @@ function PlayerInfo({ player }: Props) {
   const playerDivLayout = player === "PLAYER 2" ? "flex-row-reverse" : "";
 
   return (
-    <div className="w-5/12 font-bold">
+    <div className={`w-5/12 font-bold`}>
       <div
         className={`relative border-2 border-b-8 rounded-3xl text-center border-black bg-white py-3 text-sm sm:flex
             sm:justify-around sm:items-center sm:py-4 ${playerDivLayout}`}
